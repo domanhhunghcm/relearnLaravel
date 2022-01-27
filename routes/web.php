@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\userHome;
+use App\Http\Controllers\passDataValue;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,4 +23,6 @@ Route::get('/home/{name}',[homeController::class,"index"])->name("home.index");
 // Route::get('/usersHome', function () {
 //     return view("userHome");
 // });
-Route::get('/userHomeCtrl', [userHome::class,"index"])->name("userHome.index");;
+Route::get('/userHomeCtrl', [userHome::class,"index"])->name("userHome.index");
+Route::get('/passWelcome', [passDataValue::class,"index"])->name("passDataValue.index");
+
