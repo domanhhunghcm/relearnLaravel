@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\userHome;
 use App\Http\Controllers\passDataValue;
+use App\Http\Controllers\clientServer;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,4 +26,9 @@ Route::get('/home/{name}',[homeController::class,"index"])->name("home.index");
 // });
 Route::get('/userHomeCtrl', [userHome::class,"index"])->name("userHome.index");
 Route::get('/passWelcome', [passDataValue::class,"index"])->name("passDataValue.index");
+Route::get('/listData', [clientServer::class,"listData"])->name("clientServer.listData");
+Route::get('/getIdItems/{id}', [clientServer::class,"getIdItems"])->name("clientServer.getIdItems");
+Route::get('/makeIdItems', [clientServer::class,"makeIdItems"])->name("clientServer.makeIdItems");
+Route::get('/editIdItems/{id}', [clientServer::class,"editIdItems"])->name("clientServer.editIdItems");
+Route::get('/deleteIdItems/{id}', [clientServer::class,"deleteIdItems"])->name("clientServer.deleteIdItems");
 
