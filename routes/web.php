@@ -5,6 +5,7 @@ use App\Http\Controllers\homeController;
 use App\Http\Controllers\userHome;
 use App\Http\Controllers\passDataValue;
 use App\Http\Controllers\clientServer;
+use App\Http\Controllers\fluentString;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,4 +32,5 @@ Route::get('/getIdItems/{id}', [clientServer::class,"getIdItems"])->name("client
 Route::get('/makeIdItems', [clientServer::class,"makeIdItems"])->name("clientServer.makeIdItems");
 Route::get('/editIdItems/{id}', [clientServer::class,"editIdItems"])->name("clientServer.editIdItems");
 Route::get('/deleteIdItems/{id}', [clientServer::class,"deleteIdItems"])->name("clientServer.deleteIdItems");
-
+Route::get('/deleteIdItems/{id}', [clientServer::class,"deleteIdItems"])->name("clientServer.deleteIdItems");
+Route::get('/fluentProc', [fluentString::class,"fluentProc"])->name("fluentString.fluentProc");
