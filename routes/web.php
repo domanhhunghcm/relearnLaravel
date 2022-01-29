@@ -7,6 +7,7 @@ use App\Http\Controllers\passDataValue;
 use App\Http\Controllers\clientServer;
 use App\Http\Controllers\fluentString;
 use App\Http\Controllers\logInProc;
+use App\Http\Controllers\sessionLearn;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,3 +38,6 @@ Route::get('/deleteIdItems/{id}', [clientServer::class,"deleteIdItems"])->name("
 Route::get('/fluentProc', [fluentString::class,"fluentProc"])->name("fluentString.fluentProc");
 Route::get('/disForm', [logInProc::class,"disForm"])->name("logInProc.disForm");
 Route::post('/procLogin', [logInProc::class,"procLogin"])->name("logInProc.procLogin");
+Route::get('/sessionCheck', [sessionLearn::class,"sessionCheck"])->name("sessionLearn.sessionCheck");
+Route::get('/sessionSet', [sessionLearn::class,"sessionSet"])->name("sessionLearn.sessionSet");
+Route::get('/sessionRemove', [sessionLearn::class,"sessionRemove"])->name("sessionLearn.sessionRemove");
