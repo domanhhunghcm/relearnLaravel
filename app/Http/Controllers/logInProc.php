@@ -12,7 +12,10 @@ class logInProc extends Controller
     }
     public function procLogin(Request $request)
     {
-        // $request->all();
+        $validated = $request->validate([
+            'emailForm' => 'required|max:255|email|min:5',
+            'passForm' => 'required|min:7',
+        ]);
         return "Email: ".$request->emailForm." Password: ".$request->passForm;
     }
 }
