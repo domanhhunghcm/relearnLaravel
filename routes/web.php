@@ -6,6 +6,7 @@ use App\Http\Controllers\userHome;
 use App\Http\Controllers\passDataValue;
 use App\Http\Controllers\clientServer;
 use App\Http\Controllers\fluentString;
+use App\Http\Controllers\logInProc;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,3 +35,5 @@ Route::get('/editIdItems/{id}', [clientServer::class,"editIdItems"])->name("clie
 Route::get('/deleteIdItems/{id}', [clientServer::class,"deleteIdItems"])->name("clientServer.deleteIdItems");
 Route::get('/deleteIdItems/{id}', [clientServer::class,"deleteIdItems"])->name("clientServer.deleteIdItems");
 Route::get('/fluentProc', [fluentString::class,"fluentProc"])->name("fluentString.fluentProc");
+Route::get('/disForm', [logInProc::class,"disForm"])->name("logInProc.disForm");
+Route::post('/procLogin', [logInProc::class,"procLogin"])->name("logInProc.procLogin");
