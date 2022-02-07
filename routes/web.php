@@ -8,6 +8,7 @@ use App\Http\Controllers\clientServer;
 use App\Http\Controllers\fluentString;
 use App\Http\Controllers\logInProc;
 use App\Http\Controllers\sessionLearn;
+use App\Http\Controllers\postControl;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,3 +42,9 @@ Route::post('/procLogin', [logInProc::class,"procLogin"])->name("logInProc.procL
 Route::get('/sessionCheck', [sessionLearn::class,"sessionCheck"])->name("sessionLearn.sessionCheck");
 Route::get('/sessionSet', [sessionLearn::class,"sessionSet"])->name("sessionLearn.sessionSet");
 Route::get('/sessionRemove', [sessionLearn::class,"sessionRemove"])->name("sessionLearn.sessionRemove");
+Route::get('/displayItem', [postControl::class,"displayItem"])->name("postControl.displayItem");
+Route::get('/viewAddItem', [postControl::class,"viewAddItem"])->name("postControl.viewAddItem");
+Route::post('/addPost', [postControl::class,"addPost"])->name("postControl.addPost");
+Route::get('/deletePost/{id}', [postControl::class,"deletePost"])->name("postControl.deletePost");
+Route::get('/updatePostView/{id}', [postControl::class,"updatePostView"])->name("postControl.updatePostView");
+Route::post('/proccessUpdate', [postControl::class,"proccessUpdate"])->name("postControl.proccessUpdate");
