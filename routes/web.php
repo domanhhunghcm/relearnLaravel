@@ -9,6 +9,7 @@ use App\Http\Controllers\fluentString;
 use App\Http\Controllers\logInProc;
 use App\Http\Controllers\sessionLearn;
 use App\Http\Controllers\postControl;
+use App\Http\Controllers\learningJoin;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,3 +49,6 @@ Route::post('/addPost', [postControl::class,"addPost"])->name("postControl.addPo
 Route::get('/deletePost/{id}', [postControl::class,"deletePost"])->name("postControl.deletePost");
 Route::get('/updatePostView/{id}', [postControl::class,"updatePostView"])->name("postControl.updatePostView");
 Route::post('/proccessUpdate', [postControl::class,"proccessUpdate"])->name("postControl.proccessUpdate");
+Route::get('/innerJoin', [learningJoin::class,"innerJoin"])->name("learningJoin.innerJoin");
+Route::get('/leftJoin', [learningJoin::class,"leftJoin"])->name("learningJoin.leftJoin");
+Route::get('/rightJoin', [learningJoin::class,"rightJoin"])->name("learningJoin.rightJoin");
