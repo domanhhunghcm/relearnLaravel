@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\postData;
 
 class postControl extends Controller
 {
@@ -38,5 +39,10 @@ class postControl extends Controller
                 "body"=>$request->body
             ]);
         return back()->with("post_update","Post UPDATE data success");
+    }
+    public function displayByModel(Type $var = null)
+    {
+        $post=postData::all();
+        return $post;
     }
 }
