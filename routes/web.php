@@ -53,3 +53,6 @@ Route::get('/innerJoin', [learningJoin::class,"innerJoin"])->name("learningJoin.
 Route::get('/leftJoin', [learningJoin::class,"leftJoin"])->name("learningJoin.leftJoin");
 Route::get('/rightJoin', [learningJoin::class,"rightJoin"])->name("learningJoin.rightJoin");
 Route::get('/displayByModel', [postControl::class,"displayByModel"])->name("postControl.displayByModel");
+Route::get('/learnBlade', function () {
+    return view("learnBlade");
+});
