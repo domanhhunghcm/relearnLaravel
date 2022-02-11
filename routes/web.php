@@ -56,3 +56,15 @@ Route::get('/displayByModel', [postControl::class,"displayByModel"])->name("post
 Route::get('/learnBlade', function () {
     return view("learnBlade");
 });
+Route::get('/master', function(){
+    return view("master");
+});
+Route::get('/home', function(){
+    return view("home");
+});
+Route::get('/contact', function(){
+    return view("contact");
+});
+Route::get('/aboutUs', function(){
+    return view("aboutUs");
+});
