@@ -10,6 +10,7 @@ use App\Http\Controllers\logInProc;
 use App\Http\Controllers\sessionLearn;
 use App\Http\Controllers\postControl;
 use App\Http\Controllers\learningJoin;
+use App\Http\Controllers\pagination;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -68,3 +69,5 @@ Route::get('/contact', function(){
 Route::get('/aboutUs', function(){
     return view("aboutUs");
 });
+
+Route::get('/userPage',[pagination::class,"allUser"])->name("pagination.allUser");
