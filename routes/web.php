@@ -23,8 +23,10 @@ use App\Http\Controllers\fileUpload;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/{locale}', function ($locale) {
+    App::setLocale($locale);
+    $nameSet="hunug oi";
+    return view('welcome',compact("nameSet"));
 });
 
 Route::get('/home/{name}',[homeController::class,"index"])->name("home.index");
