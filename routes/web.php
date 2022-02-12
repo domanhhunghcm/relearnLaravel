@@ -11,6 +11,7 @@ use App\Http\Controllers\sessionLearn;
 use App\Http\Controllers\postControl;
 use App\Http\Controllers\learningJoin;
 use App\Http\Controllers\pagination;
+use App\Http\Controllers\fileUpload;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -71,3 +72,5 @@ Route::get('/aboutUs', function(){
 });
 
 Route::get('/userPage',[pagination::class,"allUser"])->name("pagination.allUser");
+Route::get('/viewUpload',[fileUpload::class,"viewUpload"])->name("fileUpload.viewUpload");
+Route::post('/procUpFile',[fileUpload::class,"procUpFile"])->name("fileUpload.procUpFile");
