@@ -12,6 +12,7 @@ use App\Http\Controllers\postControl;
 use App\Http\Controllers\learningJoin;
 use App\Http\Controllers\pagination;
 use App\Http\Controllers\fileUpload;
+use App\Http\Controllers\sendMailPro;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,11 +24,11 @@ use App\Http\Controllers\fileUpload;
 |
 */
 
-Route::get('/{locale}', function ($locale) {
-    App::setLocale($locale);
-    $nameSet="hunug oi";
-    return view('welcome',compact("nameSet"));
-});
+// Route::get('/{locale}', function ($locale) {
+//     App::setLocale($locale);
+//     $nameSet="hunug oi";
+//     return view('welcome',compact("nameSet"));
+// });
 
 Route::get('/home/{name}',[homeController::class,"index"])->name("home.index");
 // Route::get('/usersHome', function () {
@@ -76,3 +77,4 @@ Route::get('/aboutUs', function(){
 Route::get('/userPage',[pagination::class,"allUser"])->name("pagination.allUser");
 Route::get('/viewUpload',[fileUpload::class,"viewUpload"])->name("fileUpload.viewUpload");
 Route::post('/procUpFile',[fileUpload::class,"procUpFile"])->name("fileUpload.procUpFile");
+Route::get('/sendMail',[sendMailPro::class,"sendMail"])->name("sendMailPro.sendMail");
