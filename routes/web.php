@@ -13,6 +13,7 @@ use App\Http\Controllers\learningJoin;
 use App\Http\Controllers\pagination;
 use App\Http\Controllers\fileUpload;
 use App\Http\Controllers\sendMailPro;
+use App\Http\Controllers\postController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -78,3 +79,5 @@ Route::get('/userPage',[pagination::class,"allUser"])->name("pagination.allUser"
 Route::get('/viewUpload',[fileUpload::class,"viewUpload"])->name("fileUpload.viewUpload");
 Route::post('/procUpFile',[fileUpload::class,"procUpFile"])->name("fileUpload.procUpFile");
 Route::get('/sendMail',[sendMailPro::class,"sendMail"])->name("sendMailPro.sendMail");
+Route::get('/viewAdd',[postController::class,"viewAdd"])->name("postController.viewAdd");
+Route::post('/saveAdd',[postController::class,"saveAdd"])->name("postController.saveAdd");
