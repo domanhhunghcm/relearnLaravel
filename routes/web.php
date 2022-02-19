@@ -14,6 +14,7 @@ use App\Http\Controllers\pagination;
 use App\Http\Controllers\fileUpload;
 use App\Http\Controllers\sendMailPro;
 use App\Http\Controllers\postController;
+use App\Http\Controllers\studentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -81,3 +82,9 @@ Route::post('/procUpFile',[fileUpload::class,"procUpFile"])->name("fileUpload.pr
 Route::get('/sendMail',[sendMailPro::class,"sendMail"])->name("sendMailPro.sendMail");
 Route::get('/viewAdd',[postController::class,"viewAdd"])->name("postController.viewAdd");
 Route::post('/saveAdd',[postController::class,"saveAdd"])->name("postController.saveAdd");
+Route::get('/fetchData',[studentController::class,"fetchData"])->name("studentController.fetchData");
+Route::get('/viewPost',[postController::class,"viewPost"])->name("postController.viewPost");
+Route::get('/viewDetail/{id}',[postController::class,"viewDetail"])->name("postController.viewDetail");
+Route::get('/viewDelete/{id}',[postController::class,"viewDelete"])->name("postController.viewDelete");
+Route::get('/edit/{id}',[postController::class,"viewEdit"])->name("postController.viewEdit");
+Route::post('/editSave',[postController::class,"editSave"])->name("postController.editSave");
