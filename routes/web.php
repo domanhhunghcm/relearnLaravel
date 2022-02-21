@@ -88,3 +88,5 @@ Route::get('/viewDetail/{id}',[postController::class,"viewDetail"])->name("postC
 Route::get('/viewDelete/{id}',[postController::class,"viewDelete"])->name("postController.viewDelete");
 Route::get('/edit/{id}',[postController::class,"viewEdit"])->name("postController.viewEdit");
 Route::post('/editSave',[postController::class,"editSave"])->name("postController.editSave");
+Route::get('/addUserPhone',[userHome::class,"addUserPhone"])->name("userHome.addUserPhone");
+Route::get('/fetchPhone/{id}',[userHome::class,"fetchPhone"])->name("userHome.fetchPhone");
