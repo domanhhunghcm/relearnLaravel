@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\post as Posts;
+use App\Models\title as title;
 
 class postController extends Controller
 {
@@ -46,5 +47,16 @@ class postController extends Controller
         $posts->body=$request->body;
         $posts->save();
         return redirect()->route('postController.viewPost')->with("post_delete","edit success");
+    }
+    public function saveRelate()
+    {
+        $posts=new Posts();
+        $posts->title="hung do title";
+        $posts->body="hung do body";
+        $posts->save();
+        $title=new title();
+        $title->commentContent="hung do title";
+        $posts->title()->save($title);
+        return "hung do";
     }
 }

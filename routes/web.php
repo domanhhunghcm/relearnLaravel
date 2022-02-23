@@ -90,3 +90,4 @@ Route::get('/edit/{id}',[postController::class,"viewEdit"])->name("postControlle
 Route::post('/editSave',[postController::class,"editSave"])->name("postController.editSave");
 Route::get('/addUserPhone',[userHome::class,"addUserPhone"])->name("userHome.addUserPhone");
 Route::get('/fetchPhone/{id}',[userHome::class,"fetchPhone"])->name("userHome.fetchPhone");
+Route::get('/saveRelate',[postController::class,"saveRelate"])->name("userHome.saveRelate");

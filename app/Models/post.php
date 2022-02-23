@@ -9,4 +9,8 @@ class post extends Model
 {
     protected $table="posts";
     use HasFactory;
+    public function title()
+    {
+        return $this->hasMany(title::class);
+    }
 }
