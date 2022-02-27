@@ -15,6 +15,7 @@ use App\Http\Controllers\fileUpload;
 use App\Http\Controllers\sendMailPro;
 use App\Http\Controllers\postController;
 use App\Http\Controllers\studentController;
+use App\Http\Controllers\RoleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -92,3 +93,6 @@ Route::get('/addUserPhone',[userHome::class,"addUserPhone"])->name("userHome.add
 Route::get('/fetchPhone/{id}',[userHome::class,"fetchPhone"])->name("userHome.fetchPhone");
 Route::get('/exportFile',[userHome::class,"exportFile"])->name("userHome.exportFile");
 Route::get('/saveRelate',[postController::class,"saveRelate"])->name("userHome.saveRelate");
+Route::get('/addRole',[RoleController::class,"addRole"])->name("RoleController.addRole");
+Route::get('/addUserRole',[userHome::class,"addUserRole"])->name("userHome.addUserRole");
+Route::get('/findUser/{id}',[userHome::class,"findUser"])->name("userHome.findUser");

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\phones;
 use App\Exports\UserExport;
-
+use App\Models\role;
 class userHome extends Controller
 {
     public function index()
@@ -40,5 +40,21 @@ class userHome extends Controller
     public function exportFile(Type $var = null)
     {
         return Excel::download(new UserExport,"abc.xlsx");
+    }
+    public function addUserRole()
+    {
+        $user=new User();
+        $user->name="hungdo1".encrypt("secret");
+        $user->email="dohung@fds.com4".encrypt("secret");
+        $user->password=encrypt("secret");
+        $user->save();
+        $roleValue=[1,2];
+        $user->roles()->attach($roleValue);
+        return "requested manh hung do";
+    }
+    public function findUser(Request $request)
+    {
+        $user=User::find($request->id)->roles;
+        return $user;
     }
 }

@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Facades\DB;
-
+use App\Models\role;
 
 class User extends Authenticatable
 {
@@ -51,5 +51,15 @@ class User extends Authenticatable
     {
         $user=DB::table("users")->select("id","name","email","password")->get()->toArray();
         return $user;
+    }
+
+    /**
+     * The roles that belong to the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function roles()
+    {
+        return $this->belongsToMany(role::class, 'role_user_tables');
     }
 }
