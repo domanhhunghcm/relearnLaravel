@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\phones;
+use App\Exports\UserExport;
+
 class userHome extends Controller
 {
     public function index()
@@ -34,5 +36,9 @@ class userHome extends Controller
        
         $phone=User::find($request->id)->phone;
         return $phone;
+    }
+    public function exportFile(Type $var = null)
+    {
+        return Excel::download(new UserExport,"abc.xlsx");
     }
 }
