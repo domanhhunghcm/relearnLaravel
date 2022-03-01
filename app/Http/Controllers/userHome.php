@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\phones;
 use App\Exports\UserExport;
 use App\Models\role;
+use PDF;
 class userHome extends Controller
 {
     public function index()
@@ -33,7 +34,6 @@ class userHome extends Controller
     }
     public function fetchPhone(Request $request)
     {
-       
         $phone=User::find($request->id)->phone;
         return $phone;
     }
@@ -56,5 +56,16 @@ class userHome extends Controller
     {
         $user=User::find($request->id)->roles;
         return $user;
+    }
+    public function listAllData()
+    {
+        $users=User::select("name","email","password")->get();
+        return view("displayView",compact("users"));
+    }
+    public function downloadPDF()
+    {
+        $users=User::select("name","email","password")->get();
+        $pdf=PDF::loadView("displayView",compact("users"));
+        return $pdf->download("hungdo.pdf");
     }
 }

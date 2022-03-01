@@ -96,3 +96,5 @@ Route::get('/saveRelate',[postController::class,"saveRelate"])->name("userHome.s
 Route::get('/addRole',[RoleController::class,"addRole"])->name("RoleController.addRole");
 Route::get('/addUserRole',[userHome::class,"addUserRole"])->name("userHome.addUserRole");
 Route::get('/findUser/{id}',[userHome::class,"findUser"])->name("userHome.findUser");
+Route::get('/listAllData',[userHome::class,"listAllData"])->name("userHome.listAllData");
+Route::get('/downloadPDF',[userHome::class,"downloadPDF"])->name("userHome.downloadPDF");
