@@ -16,6 +16,7 @@ use App\Http\Controllers\sendMailPro;
 use App\Http\Controllers\postController;
 use App\Http\Controllers\studentController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\EmployeeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -98,3 +99,5 @@ Route::get('/addUserRole',[userHome::class,"addUserRole"])->name("userHome.addUs
 Route::get('/findUser/{id}',[userHome::class,"findUser"])->name("userHome.findUser");
 Route::get('/listAllData',[userHome::class,"listAllData"])->name("userHome.listAllData");
 Route::get('/downloadPDF',[userHome::class,"downloadPDF"])->name("userHome.downloadPDF");
+Route::get('/displayViewImport',[EmployeeController::class,"displayViewImport"])->name("EmployeeController.displayViewImport");
+Route::post('/proccessUpload',[EmployeeController::class,"proccessUpload"])->name("EmployeeController.proccessUpload");
