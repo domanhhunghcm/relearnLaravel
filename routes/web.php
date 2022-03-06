@@ -17,6 +17,7 @@ use App\Http\Controllers\postController;
 use App\Http\Controllers\studentController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\resizeControll;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -101,3 +102,5 @@ Route::get('/listAllData',[userHome::class,"listAllData"])->name("userHome.listA
 Route::get('/downloadPDF',[userHome::class,"downloadPDF"])->name("userHome.downloadPDF");
 Route::get('/displayViewImport',[EmployeeController::class,"displayViewImport"])->name("EmployeeController.displayViewImport");
 Route::post('/proccessUpload',[EmployeeController::class,"proccessUpload"])->name("EmployeeController.proccessUpload");
+Route::get('/displayViewScale',[resizeControll::class,"displayViewScale"])->name("EmployeeController.displayViewScale");
+Route::post('/scaleImg',[resizeControll::class,"scaleImg"])->name("resizeControll.scaleImg");
