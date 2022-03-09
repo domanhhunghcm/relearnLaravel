@@ -103,4 +103,6 @@ Route::get('/downloadPDF',[userHome::class,"downloadPDF"])->name("userHome.downl
 Route::get('/displayViewImport',[EmployeeController::class,"displayViewImport"])->name("EmployeeController.displayViewImport");
 Route::post('/proccessUpload',[EmployeeController::class,"proccessUpload"])->name("EmployeeController.proccessUpload");
 Route::get('/displayViewScale',[resizeControll::class,"displayViewScale"])->name("EmployeeController.displayViewScale");
+Route::get('/displayDropZone',[resizeControll::class,"displayDropZone"])->name("EmployeeController.displayDropZone");
 Route::post('/scaleImg',[resizeControll::class,"scaleImg"])->name("resizeControll.scaleImg");
+Route::post('/saveDrop',[resizeControll::class,"saveDrop"])->name("resizeControll.saveDrop");
