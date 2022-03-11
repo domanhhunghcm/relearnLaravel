@@ -113,3 +113,5 @@ Route::get('/viewEdit/{id}',[companies::class,"viewEdit"])->name("companies.view
 Route::post('/addStore',[companies::class,"addStore"])->name("companies.addStore");
 Route::post('/editStore',[companies::class,"editStore"])->name("companies.editStore");
 Route::get('/deleteComp/{id}',[companies::class,"deleteComp"])->name("companies.deleteComp");
+Route::get('/searchView',[userHome::class,"searchView"])->name("companies.searchView");
+Route::get('/searchStore',[userHome::class,"searchStore"])->name("userHome.searchStore");

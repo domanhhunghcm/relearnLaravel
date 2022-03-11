@@ -29,10 +29,10 @@ class DatabaseSeeder extends Seeder
         // }
         $faker=Faker::create();
         foreach(range(1,1000) as $index){
-            DB::table("students")->insert([
+            DB::table("users")->insert([
                 "name"=>$faker->name,
                 "email"=>$faker->email,
-                "phone"=>$faker->phoneNumber,
+                "password"=>$faker->phoneNumber,
             ]);
         }
         

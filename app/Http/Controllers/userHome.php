@@ -68,4 +68,18 @@ class userHome extends Controller
         $pdf=PDF::loadView("displayView",compact("users"));
         return $pdf->download("hungdo.pdf");
     }
+    public function searchView()
+    {
+        return view("searchUser");
+    }
+    public function searchStore(Request $request)
+    {
+        $input = $request->all();
+
+        $data = User::select("name")
+                  ->where("name","LIKE","%{$input['query']}%")
+                  ->get();
+   
+        return response()->json($data);
+    }
 }
