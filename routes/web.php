@@ -18,6 +18,7 @@ use App\Http\Controllers\studentController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\resizeControll;
+use App\Http\Controllers\companies;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -106,3 +107,9 @@ Route::get('/displayViewScale',[resizeControll::class,"displayViewScale"])->name
 Route::get('/displayDropZone',[resizeControll::class,"displayDropZone"])->name("EmployeeController.displayDropZone");
 Route::post('/scaleImg',[resizeControll::class,"scaleImg"])->name("resizeControll.scaleImg");
 Route::post('/saveDrop',[resizeControll::class,"saveDrop"])->name("resizeControll.saveDrop");
+Route::get('/addStudentView',[companies::class,"addStudentView"])->name("companies.addStudentView");
+Route::get('/displayAll',[companies::class,"displayAll"])->name("companies.displayAll");
+Route::get('/viewEdit/{id}',[companies::class,"viewEdit"])->name("companies.viewEdit");
+Route::post('/addStore',[companies::class,"addStore"])->name("companies.addStore");
+Route::post('/editStore',[companies::class,"editStore"])->name("companies.editStore");
+Route::get('/deleteComp/{id}',[companies::class,"deleteComp"])->name("companies.deleteComp");
