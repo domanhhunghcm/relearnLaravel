@@ -19,6 +19,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\resizeControll;
 use App\Http\Controllers\companies;
+use App\Http\Controllers\testController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -115,3 +116,4 @@ Route::post('/editStore',[companies::class,"editStore"])->name("companies.editSt
 Route::get('/deleteComp/{id}',[companies::class,"deleteComp"])->name("companies.deleteComp");
 Route::get('/searchView',[userHome::class,"searchView"])->name("companies.searchView");
 Route::get('/searchStore',[userHome::class,"searchStore"])->name("userHome.searchStore");
+Route::get('/getFirstLast',[testController::class,"getFirstLast"])->name("testController.getFirstLast");
