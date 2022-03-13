@@ -20,6 +20,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\resizeControll;
 use App\Http\Controllers\companies;
 use App\Http\Controllers\testController;
+use App\Http\Controllers\NhanVienController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -117,3 +118,4 @@ Route::get('/deleteComp/{id}',[companies::class,"deleteComp"])->name("companies.
 Route::get('/searchView',[userHome::class,"searchView"])->name("companies.searchView");
 Route::get('/searchStore',[userHome::class,"searchStore"])->name("userHome.searchStore");
 Route::get('/getFirstLast',[testController::class,"getFirstLast"])->name("testController.getFirstLast");
+Route::get('/displayNhanvien',[NhanVienController::class,"displayNhanvien"])->name("NhanVienController.displayNhanvien");
