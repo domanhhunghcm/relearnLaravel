@@ -21,6 +21,8 @@ use App\Http\Controllers\resizeControll;
 use App\Http\Controllers\companies;
 use App\Http\Controllers\testController;
 use App\Http\Controllers\NhanVienController;
+use App\Http\Controllers\BookController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -119,3 +121,5 @@ Route::get('/searchView',[userHome::class,"searchView"])->name("companies.search
 Route::get('/searchStore',[userHome::class,"searchStore"])->name("userHome.searchStore");
 Route::get('/getFirstLast',[testController::class,"getFirstLast"])->name("testController.getFirstLast");
 Route::get('/displayNhanvien',[NhanVienController::class,"displayNhanvien"])->name("NhanVienController.displayNhanvien");
+Route::get('/viewBook',[BookController::class,"viewBook"])->name("BookController.viewBook");
+Route::post('/saveBook',[BookController::class,"saveBook"])->name("BookController.saveBook");
