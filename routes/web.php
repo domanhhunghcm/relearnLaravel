@@ -122,4 +122,8 @@ Route::get('/searchStore',[userHome::class,"searchStore"])->name("userHome.searc
 Route::get('/getFirstLast',[testController::class,"getFirstLast"])->name("testController.getFirstLast");
 Route::get('/displayNhanvien',[NhanVienController::class,"displayNhanvien"])->name("NhanVienController.displayNhanvien");
 Route::get('/viewBook',[BookController::class,"viewBook"])->name("BookController.viewBook");
+Route::get('/getChange/{id}',[BookController::class,"getChange"])->name("BookController.getChange");
+Route::post('/saveChange',[BookController::class,"saveChange"])->name("BookController.saveChange");
 Route::post('/saveBook',[BookController::class,"saveBook"])->name("BookController.saveBook");
+Route::delete('/deleteBook/{id}', [BookController::class,"deleteBook"])->name("BookController.deleteBook");
+Route::delete('/deleteAll', [BookController::class,"deleteAll"])->name("BookController.deleteAll");
